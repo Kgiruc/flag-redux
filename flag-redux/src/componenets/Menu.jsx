@@ -10,7 +10,7 @@ function menu() {
     return (
         <div className="flex flex-col h-[100vh] justify-center items-center">
            <p>Counter {counter}</p>
-           <button onClick={() => dispatch(increment())}>+</button>
+           <button onClick={() => dispatch(increment(5))}>+</button>
            <button onClick={() => dispatch(decrement())}>-</button>
             {isLogged ? <p>zalogowano</p> : <p>logowanie pedale</p>} 
         </div>
