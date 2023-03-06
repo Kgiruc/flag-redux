@@ -1,10 +1,15 @@
-function App() {
+import './index.css';
+import { Routes, Route } from "react-router-dom";
+import Menu from "./componenets/Menu";
+import Results from './componenets/Results';
 
-  return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  )
+function App() {
+    return (
+        <Routes>
+            <Route path="/" element={<Menu />} />
+            <Route path="/res" element={<Results />} />
+        </Routes>
+    )
 }
 
 export default App
