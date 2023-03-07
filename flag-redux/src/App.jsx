@@ -1,14 +1,25 @@
 import './index.css';
+import { configureStore } from '@reduxjs/toolkit';
 import { Routes, Route } from "react-router-dom";
-import Menu from "./componenets/Menu";
-import Results from './componenets/Results';
+import Login from "./componenets/Login";
+import Profile from './componenets/Profile';
+import { Provider } from 'react-redux';
+import userSlice from "./features/User"
+
+const store = configureStore({
+    reducer: {
+      user: userSlice
+    }
+  })
 
 function App() {
-    return (
+    return (<Provider store={store}>
         <Routes>
-            <Route path="/" element={<Menu />} />
-            <Route path="/res" element={<Results />} />
-        </Routes>
+            
+            <Route path="/" element={<Login />} />
+            <Route path="/res" element={<Profile />} />
+            
+        </Routes></Provider>
     )
 }
 
